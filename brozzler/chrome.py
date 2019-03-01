@@ -75,7 +75,7 @@ class Chrome:
                 False)
         '''
         self.port = port
-        self.chrome_exe = chrome_exe
+        self.chrome_exe = "google-chrome"
         self.ignore_cert_errors = ignore_cert_errors
         self._shutdown = threading.Event()
         self.chrome_process = None
@@ -175,7 +175,7 @@ class Chrome:
                 '--disable-first-run-ui', '--no-first-run',
                 '--homepage=about:blank', '--disable-direct-npapi-requests',
                 '--disable-web-security', '--disable-notifications',
-                '--disable-extensions', '--disable-save-password-bubble']
+                '--disable-extensions', '--disable-save-password-bubble', '--headless']
 
         if disk_cache_dir:
             chrome_args.append('--disk-cache-dir=%s' % disk_cache_dir)
